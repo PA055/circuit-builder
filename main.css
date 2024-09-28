@@ -4,10 +4,13 @@
     height: 95vh;
 }
 
+.hidden {
+    display: none;
+}
+
 .component {
     touch-action: none;
     user-select: none;
-    border: 1px solid black;
     height: fit-content;
 }
 

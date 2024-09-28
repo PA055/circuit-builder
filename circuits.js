@@ -1,16 +1,13 @@
-position = {x: 0, y: 0};
-
 interact('.component').draggable({
     listeners: {
       start (event) {
         console.log(event.type, event.target)
       },
       move (event) {
-        position.x += event.dx
-        position.y += event.dy
+        event.target.querySelectorAll("p.x").html = event.target.querySelectorAll("p.x").html + event.dx;
+        event.target.querySelectorAll("p.y").html = event.target.querySelectorAll("p.y").html + event.dy;
   
-        event.target.style.transform =
-          `translate(${position.x}px, ${position.y}px)`
+        event.target.style.transform = `translate(${event.target.querySelectorAll("p.x").html}px, ${event.target.querySelectorAll("p.y").html}px)`;
       },
     }
   })
